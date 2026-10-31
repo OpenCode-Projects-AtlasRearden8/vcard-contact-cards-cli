@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vcard-contact-cards-cli"
+version = "1.0.0"
+description = "Offline contact cards: hand-type or import contacts, print pocket/wallet cards with QR codes, and share standard .vcf files. No accounts, no cloud, no scraping."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Asdale Dynamics, LLC" }]
+keywords = ["vcard", "qr", "contact-cards", "offline", "privacy", "cli"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Utilities",
+]
+
+[project.scripts]
+vcc = "vcc.cli:main"
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+include = ["vcc*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
